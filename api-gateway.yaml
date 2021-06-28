@@ -1,0 +1,18 @@
+server:
+  port: 7001
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: account
+          uri: lb://ACCOUNT
+          predicates:
+            - Path=/account/**
+            
+eureka:
+  client:
+    serviceUrl:
+      defaultZone : http://eureka-server:8761/eureka

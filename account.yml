@@ -27,3 +27,13 @@ management:
     web:
       exposure:
         include: health, info, metrics
+
+logging:
+  file:  
+    name: ${logging.file.path}\account.log
+    path: C:\Users\jmagalmo\Documents\proyectos\bootCamp-microservice\Log
+  level:
+    root: info
+  pattern:
+    file: '%d{HH:mm:ss.SSS} - %5p | ms-Account= [%12(ID: %8mdc{id})] [%21.21thread] | %-45.45logger{45} :  %msg%n'
+    console: '%d{HH:mm:ss.SSS} - %highlight(%5p) | %green(ms-Account =) [%12(ID: %8mdc{id})] [%21.21thread] | %cyan(%-45.45logger{45}) :  %msg%n'
