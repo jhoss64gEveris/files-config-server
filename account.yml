@@ -2,8 +2,6 @@ server:
   servlet:
     contextPath: /account
   port: 9092
-  tomcat:
-    max-threads: 5
 
 spring: 
   application:
@@ -33,7 +31,7 @@ management:
 logging:
   file:  
     name: ${logging.file.path}\account.log
-    path: C:\Users\jmagalmo\Documents\proyectos\bootCamp-microservice\Log
+#    path: C:\Users\jmagalmo\Documents\proyectos\bootCamp-microservice\Log
   level:
     root: info
   pattern:
