@@ -8,11 +8,8 @@ spring:
     name: account
   data:
     mongodb:
-      host: mongdb-jhoss.mongo.cosmos.azure.com
-      port: 10255
+      uri: mongodb://mongdb-jhoss:EHUd25BRylFY4zBBrtoJviTxdoHVo9gR2XUHj1dcfpPEUc6JebagmhVkTh8TisXKM4StM6xgMwfNpyDa0ajdng==@mongdb-jhoss.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@mongdb-jhoss@
       database: account
-      username: mongdb-jhoss
-      password: EHUd25BRylFY4zBBrtoJviTxdoHVo9gR2XUHj1dcfpPEUc6JebagmhVkTh8TisXKM4StM6xgMwfNpyDa0ajdng==
 
 eureka:
  client:
@@ -27,13 +24,3 @@ management:
     web:
       exposure:
         include: health, info, metrics
-
-logging:
-  file:  
-    name: ${logging.file.path}\account.log
-#    path: C:\Users\jmagalmo\Documents\proyectos\bootCamp-microservice\Log
-  level:
-    root: info
-  pattern:
-    file: '%d{HH:mm:ss.SSS} - %5p | ms-Account= [%12(ID: %8mdc{id})] [%21.21thread] | %-45.45logger{45} :  %msg%n'
-    console: '%d{HH:mm:ss.SSS} - %highlight(%5p) | %green(ms-Account =) [%12(ID: %8mdc{id})] [%21.21thread] | %cyan(%-45.45logger{45}) :  %msg%n'
