@@ -8,7 +8,7 @@ spring:
     gateway:
       routes:
         - id: account
-          uri: lb://ACCOUNT
+          uri: https://msaccount-jabmm.azurewebsites.net
           predicates:
             - Path=/account/**
             
