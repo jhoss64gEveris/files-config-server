@@ -1,0 +1,39 @@
+server:
+  servlet:
+    contextPath: /bootcoin
+  port: 9097
+  tomcat:
+    max-threads: 5
+
+spring: 
+  application:
+    name: bootcoin
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: bootcoin
+
+eureka:
+ client:
+   service-url:
+     defaultZone: http://localhost:8761/eureka
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: health, info, metrics     
+ 
+logging:
+  file:  
+    name: ${logging.file.path}\bootcoin.log
+    path: C:\Users\jmagalmo\Documents\proyectos\bootCamp-microservice\Log
+  level:
+    root: info
+  pattern:
+    file: '%d{HH:mm:ss.SSS} - %5p | ms-credit-card= [%12(ID: %8mdc{id})] [%21.21thread] | %-45.45logger{45} :  %msg%n'
+    console: '%d{HH:mm:ss.SSS} - %highlight(%5p) | %green(ms-credit-card =) [%12(ID: %8mdc{id})] [%21.21thread] | %cyan(%-45.45logger{45}) :  %msg%n'
