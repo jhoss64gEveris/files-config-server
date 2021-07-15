@@ -10,14 +10,13 @@ spring:
     name: bootcoin
   data:
     mongodb:
-      host: localhost
-      port: 27017
+      uri: mongodb://mongdb-jhoss:EHUd25BRylFY4zBBrtoJviTxdoHVo9gR2XUHj1dcfpPEUc6JebagmhVkTh8TisXKM4StM6xgMwfNpyDa0ajdng==@mongdb-jhoss.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@mongdb-jhoss@
       database: bootcoin
 
 eureka:
  client:
    service-url:
-     defaultZone: http://localhost:8761/eureka
+     defaultZone: https://eurekaserver-jhoss.azurewebsites.net/eureka
 
 management:
   endpoint:
@@ -28,12 +27,3 @@ management:
       exposure:
         include: health, info, metrics     
  
-logging:
-  file:  
-    name: ${logging.file.path}\bootcoin.log
-    path: C:\Users\jmagalmo\Documents\proyectos\bootCamp-microservice\Log
-  level:
-    root: info
-  pattern:
-    file: '%d{HH:mm:ss.SSS} - %5p | ms-credit-card= [%12(ID: %8mdc{id})] [%21.21thread] | %-45.45logger{45} :  %msg%n'
-    console: '%d{HH:mm:ss.SSS} - %highlight(%5p) | %green(ms-credit-card =) [%12(ID: %8mdc{id})] [%21.21thread] | %cyan(%-45.45logger{45}) :  %msg%n'
