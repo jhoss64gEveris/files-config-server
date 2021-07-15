@@ -11,6 +11,10 @@ spring:
           uri: https://msaccount-jabmm.azurewebsites.net
           predicates:
             - Path=/account/**
+        - id: account
+          uri: https://msbootcoin-jabmm.azurewebsites.net
+          predicates:
+            - Path=/bootcoin/**
             
 eureka:
   client:
